@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div id="header-top">
+                <div id="bookmark" onclick="openmodal()">
+                    <img src="images/bookmark_Icon_01.gif" alt="a"> <span class="bookmark-text"><a href="#">bookmark</a></span>
+                </div>
+                <ul id="lnb">
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                </ul>
+            </div>
+            <div id="header-bottom">
+                <div id="header-logo">
+                    <img src="images/top_logo_01.jpg" alt="a">
+                </div>
+                <div class="header-search">
+                    <input type="text"><img src="images/search_Img_01.gif" alt="a" class="simg">
+                </div>
+            </div>
+        </header>
+        <nav>
+            <ul id="gnb">
+                <li><a href="#">
+                        <div><span>ㅡ</span><br>
+                            <span>ㅡ</span><br>
+                            <span>ㅡ</span></div>
+                    </a>
+                </li>
+                <li><a href="#">사업자 도매몰</a></li>
+                <li><a href="#">커피메이커</a></li>
+                <li><a href="#">드립용품</a></li>
+                <li><a href="#">컵&글라스</a></li>
+                <li><a href="#">티용품</a></li>
+                <li><a href="#">원두커피&시럽</a></li>
+                <li><a href="#">액세서리</a></li>
+                <li><a href="#">커뮤니티</a></li>
+            </ul>
+        </nav>
+        <aside>
+            <span>home > 드립용품 > 드립세트 > 프랜드 > 프랜드 POT 드립세트 102D(3~4인용)</span>
+        </aside>
+        <section>
+            <div id="main-img">
+                <img src="images/dripSet_Img_01.jpg" alt="a">
+                <div class="big-img">
+                    <img src="images/closeup_Img_01.gif" alt="a"> <span>큰 이미지 보기</span>
+                </div>
+            </div>
+            <div id="section-info">
+                <h4>프랜드 POT 드립세트 102D(3~4인용)</h4>
+                <div class="money">
+                    <div class="ex1"><span>적립금</span> &nbsp;&nbsp;&nbsp;<span>2%</span></div>
+                    <div class="ex2"><span>판매가격</span> &nbsp;&nbsp;&nbsp;<span>34,000원</span></div>
+                </div>
+                <div id="order-box">
+                    <div class="order-top">
+                        <div class="order-title">
+                            <span>프랜드 POT 드립세트<br>102D(3~4인용)</span>
+                        </div>
+                        <div class="num-box">
+                            <div class="tem-box">
+                                <div class="tem-flex"><input type="text" value="1" id="plusNumber"></div>
+                                <div class="tem-flex2">
+                                    <img src="images/up_Icon_01.gif" alt="a" onclick="plus()">
+                                    <img src="images/down_Icon_01.gif" alt="a" onclick="down()">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-money">
+                            <span>34,000원</span>
+                        </div>
+                    </div>
+                    <div class="total-money">
+                        <span class="total">총 상품 금액 <span>34,000 </span>원</span>
+                    </div>
+                </div>
+                <img src="images/faceBook_imgBtn_01.gif" alt="a" class="sns">
+                <img src="images/twitter_imgBtn_01.gif" alt="a" class="sns">
+                <div class="button-box">
+                    <div class="button1"><img src="images/order_Btn_01.gif" alt="a"></div>
+                    <div class="button2"><img src="images/cart_Btn_01.gif" alt="a"></div>
+                    <div class="button3"><img src="images/wish_Btn_01.gif" alt="a"></div>
+                </div>
+            </div>
+        </section>
+        <div id="modal" class="hidden">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <h1>I'm a modal</h1><button onclick="closemodal()">X</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var a = document.getElementById("plusNumber").value;
+
+        function plus() {
+            document.getElementById("plusNumber").value = ++a;
+        }
+
+        function down() {
+            //            if(document.getElementById("plusNumber").value!=0){
+            //               continue;
+            //            }
+            document.getElementById("plusNumber").value = --a;
+        }
+        function openmodal() {
+           document.querySelector("#modal").classList.remove("hidden");
+        }
+
+        function closemodal() {
+            document.querySelector("#modal").classList.add("hidden");
+
+        }
+        document.querySelector(".modal-overlay").addEventListener("click", closemodal);
+    </script>
+</body></html>
