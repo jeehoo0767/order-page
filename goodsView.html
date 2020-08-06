@@ -80,11 +80,11 @@
                             </div>
                         </div>
                         <div class="order-money">
-                            <span>34,000원</span>
+                            <span class="price">원</span>
                         </div>
                     </div>
                     <div class="total-money">
-                        <span class="total">총 상품 금액 <span>34,000 </span>원</span>
+                        <span class="total">총 상품 금액 <span class="price">  </span>원</span>
                     </div>
                 </div>
                 <img src="images/faceBook_imgBtn_01.gif" alt="a" class="sns">
@@ -106,16 +106,26 @@
 
     <script>
         var a = document.getElementById("plusNumber").value;
+        a = parseInt(a);
+        
+        var total_Price = document.querySelectorAll(".price");
 
         function plus() {
             document.getElementById("plusNumber").value = ++a;
+            
         }
 
         function down() {
             //            if(document.getElementById("plusNumber").value!=0){
             //               continue;
             //            }
-            document.getElementById("plusNumber").value = --a;
+           
+           if(a==1){
+                alert("최소 수량은 1개 입니다.")
+            }
+           else{ document.getElementById("plusNumber").value = --a;
+               }
+            
         }
         function openmodal() {
            document.querySelector("#modal").classList.remove("hidden");
